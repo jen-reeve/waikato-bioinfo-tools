@@ -163,4 +163,5 @@ cython_debug/
 .nextflow/
 outdir/
 work/
+data/
 .nextflow*
