@@ -22,8 +22,10 @@
      workflows use the "tube map" design for that. See https://nf-co.re/docs/contributing/design_guidelines#examples for examples.   -->
 <!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
 
-1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
-2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+1. Run a hmmsearch of a specified hmm profile against a specified metagenome file ([HMMER_HMMSEARCH](https://nf-co.re/modules/hmmer_hmmsearch/))
+2. Clean the hmm output to be less obnoxious 
+3. Extract the IDs of the sequences identified
+4. Extract the full sequences identified ([SEQKIT_GREP](https://nf-co.re/modules/seqkit_grep/))
 
 ## Usage
 
@@ -32,19 +34,19 @@
 
 <!-- TODO nf-core: Describe the minimum required steps to execute the pipeline, e.g. how to prepare samplesheets.
      Explain what rows and columns represent. For instance (please edit as appropriate):
-
+-->
 First, prepare a samplesheet with your input data that looks as follows:
 
-`samplesheet.csv`:
+`sample.csv`:
 
 ```csv
-sample,fastq_1,fastq_2
-CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
+hmm_profile,metagenome
+NAD_lig_AD,UQ83.fasta
 ```
 
-Each row represents a fastq file (single-end) or a pair of fastq files (paired end).
+Each row represents a combination of a HMM profile and a metagenome to search
 
--->
+
 
 Now, you can run the pipeline using:
 
@@ -53,7 +55,7 @@ Now, you can run the pipeline using:
 ```bash
 nextflow run waikato/hmmsearchmetagenome \
    -profile <docker/singularity/.../institute> \
-   --input samplesheet.csv \
+   --input sample.csv \
    --outdir <OUTDIR>
 ```
 
