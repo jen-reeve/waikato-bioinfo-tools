@@ -21,6 +21,7 @@
 - [SeqKit](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0163962)
 
   > Wei Shen, Botond Sipos, and Liuyang Zhao. 2024. SeqKit2: A Swiss Army Knife for Sequence and Alignment Processing. iMeta e191. doi:10.1002/imt2.191.
+
   > Wei Shen, Shuai Le, Yan Li, and Fuquan Hu. SeqKit: a cross-platform and ultrafast toolkit for FASTA/Q file manipulation. PLOS ONE. doi:10.1371/journal.pone.0163962.
 
 - [HMMER](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002195)
