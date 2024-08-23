@@ -2,4 +2,4 @@
 tasks:
   - name: Download Nextflow
     init:
-      curl -s https://get.nextflow.io | bash
+      curl -s https://get.nextflow.io | bash | chmod +x nextflow | sudo mv nextflow /usr/local/bin/
