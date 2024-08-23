@@ -1,5 +1,10 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: Download Nextflow
-    init: curl -s https://get.nextflow.io | bash | chmod +x nextflow | sudo mv nextflow /usr/local/bin/
+    init: |
+      (
+      curl -s https://get.nextflow.io | bash
+      chmod +x nextflow
+      sudo mv nextflow /usr/local/bin/
+      )
     command: nextflow info
